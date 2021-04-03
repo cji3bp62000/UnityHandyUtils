@@ -73,8 +73,8 @@ public class InterfaceComponentContainerPropertyDrawer : PropertyDrawer
 		isInitialized = true;
 	}
 
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
+	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+	{
 		Initialize(property, label);
 		EditorGUI.PropertyField(position, componentProperty, displayLabel);
 		var component = componentProperty.objectReferenceValue as Component;
