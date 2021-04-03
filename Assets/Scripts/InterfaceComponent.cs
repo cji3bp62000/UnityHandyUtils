@@ -87,6 +87,9 @@ public class InterfaceComponentContainerPropertyDrawer : PropertyDrawer
 		if (!targetInterfaceType.IsAssignableFrom(currentType)) {
 			// 他の GameObject を引っ張って入れた場合、component に Transform が設定されるので
 			// 該当 GameObject から TInterface が無いか検索する
+			// If you grab an GameObject and put it on InterfaceCOmponent's inspector,
+			// Transform (which is the first "Component") will be serialized (but not you really want to),
+			// so search by GetComponent<TInterface>() again
 			if (transformType.IsAssignableFrom(currentType)) {
 				componentProperty.objectReferenceValue = component.GetComponent(targetInterfaceType);
 			} else {
