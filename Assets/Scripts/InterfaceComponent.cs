@@ -65,7 +65,7 @@ public class InterfaceComponentContainerPropertyDrawer : PropertyDrawer
 
 	private void Initialize(SerializedProperty classProperty, GUIContent label)
 	{
-		if(isInitialized) return;
+		if (isInitialized) return;
 		componentProperty = classProperty.FindPropertyRelative("component");
 		targetInterfaceType = fieldInfo.FieldType.GetGenericArguments()[0];
 		transformType = typeof(Transform);
@@ -76,7 +76,7 @@ public class InterfaceComponentContainerPropertyDrawer : PropertyDrawer
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
 		Initialize(property, label);
-        EditorGUI.PropertyField(position, componentProperty, displayLabel);
+		EditorGUI.PropertyField(position, componentProperty, displayLabel);
 		var component = componentProperty.objectReferenceValue as Component;
 		if (component == null) {
 			componentProperty.objectReferenceValue = null;
