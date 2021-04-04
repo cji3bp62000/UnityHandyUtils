@@ -69,7 +69,7 @@ public class InterfaceComponentContainerPropertyDrawer : PropertyDrawer
 		componentProperty = classProperty.FindPropertyRelative("component");
 		targetInterfaceType = fieldInfo.FieldType.GetGenericArguments()[0];
 		transformType = typeof(Transform);
-		displayLabel = new GUIContent(label.text + " (" + targetInterfaceType.ToString() + ")");
+		displayLabel = new GUIContent(label.text + " (" + targetInterfaceType.Name + ")");
 		isInitialized = true;
 	}
 
